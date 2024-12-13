@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "f4a27df4e895410be24c704fc34ec713"
+application_url = "https://managing-honey-nn-moments.trycloudflare.com"
+embedded = true
+name = "product-sync-app"
+handle = "product-sync-app-12"
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://managing-honey-nn-moments.trycloudflare.com/auth/callback",
+  "https://managing-honey-nn-moments.trycloudflare.com/auth/shopify/callback",
+  "https://managing-honey-nn-moments.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "quickstart-6b06d7d7.myshopify.com"
+automatically_update_urls_on_dev = true
